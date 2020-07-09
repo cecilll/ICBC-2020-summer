@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
     <el-button type="text" @click="hello">helloworld</el-button>
-    helloworld
   </div>
 </template>
 
@@ -13,7 +12,7 @@ export default {
   },
   methods: {
     hello: function () {
-      console.log("lhr")
+      console.log("hsj")
     }
   }
 }
