@@ -55,34 +55,33 @@
                         password: this.loginForm.password
                     };
                         // 调用axios登录接口
-                     await this.$api.Login(loginParams).then(res => {
-                            // debugger;
-                         let {code, msg, user } = res.data;
-                         if (code === 200) {
-                                // elementui中提示组件
-                             this.$message({
-                                    type: 'success',
-                                    message: msg
-                             });
-                             // 登陆成功，用户信息就保存在sessionStorage中
-                             sessionStorage.setItem('user', JSON.stringify(user));
-                             // 跳转到后台主页面
-                             console.log('this',this);
-                             this.$router.push({ path: '/home' })
-                         }else {
-                             this.$message({
-                                 type: 'error',
-                                 message: msg,
-                             });
-                         }
-                     }).catch(err =>{
-                         console.log(err);
-                     });
+                    await this.$api.Login(loginParams).then(res => {
+                        // debugger;
+                        let {code, msg, user } = res.data;
+                        if (code === 200) {
+                            // elementui中提示组件
+                            this.$message({
+                                type: 'success',
+                                message: msg
+                            });
+                            // 登陆成功，用户信息就保存在sessionStorage中
+                            sessionStorage.setItem('user', JSON.stringify(user));
+                            // 跳转到后台主页面
+                            console.log('this',this);
+                            this.$router.push({ path: '/home' })
+                        }else {
+                            this.$message({
+                                type: 'error',
+                                message: msg,
+                            });
+                        }
+                    }).catch(err =>{
+                        console.log(err);
+                    });
                 }else {
                     console.log('error submit!');
                     return false;
                 }
-
             }
         }
     }
