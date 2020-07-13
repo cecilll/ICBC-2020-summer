@@ -12,8 +12,7 @@ export default {
 <style scoped>
 #headbar{
     height: 50px;
-    background-color: aliceblue;
+    background-color: #fff;
     margin-bottom: 5px;
-    margin-left: 5px;
 }
 </style>

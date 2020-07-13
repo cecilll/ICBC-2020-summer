@@ -4,6 +4,9 @@
       default-active="2"
       @open="handleOpen"
       @close="handleClose"
+      background-color="#faf2f2"
+      text-color="#fff"
+      active-text-color="#e79cc2"
     >
       <el-menu-item index="1">
         <i class="el-icon-menu"></i>
