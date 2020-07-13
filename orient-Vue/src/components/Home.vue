@@ -1,11 +1,10 @@
 <template>
   <div id="home">
     <div id="left"><Nav ></Nav></div>
+    
     <div id="right">
       <Header></Header>
-      <transition  name="fade" mode="out-in">
-        <router-view></router-view>
-      </transition>
+      <div id="container"></div>
     </div>
   </div>
 </template>
@@ -21,7 +20,7 @@ export default {
   },
   components:{
     Nav,
-    Header,
+    Header
     
   },
   methods: {
