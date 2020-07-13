@@ -1,11 +1,9 @@
-
 /*
-* 用来存放一些模拟用户的数据
-* */
+ * 用来存放一些模拟用户的数据
+ * */
 
 // import Mock from 'mockjs'
-const users = [
-    {
+const users = [{
         id: 1,
         username: 'hsj',
         password: '123456',
@@ -14,7 +12,7 @@ const users = [
     },
     {
         id: 2,
-        username: 'lhr',
+        username: 'admin',
         password: '123456',
         email: 'lhr_cecil@163.com',
         name: '李浩然'
