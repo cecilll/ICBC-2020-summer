@@ -61,8 +61,10 @@ export default {
   },
   methods: {
     handleLogin: async function() {
+      // 验证是否为空
       let valid = await this.$refs.loginForm.validate();
       if (valid) {
+        // 正在登录
         this.logining = true;
         let loginParams = {
           username: this.loginForm.username,
@@ -83,7 +85,6 @@ export default {
               // 登陆成功，用户信息就保存在sessionStorage中
               sessionStorage.setItem("user", JSON.stringify(user));
               // 跳转到后台主页面
-              console.log("this", this);
               this.$router.push({ path: "/home" });
             } else {
               this.$message({
