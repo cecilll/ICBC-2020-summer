@@ -2,8 +2,8 @@ import $axios from "./server.util";
 
 const Login = data => {
     return $axios({
-        url: '/user/login',
-        method: 'post',
+        url: '/Login',
+        method: 'get',
         data
     })
 };

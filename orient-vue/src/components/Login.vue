@@ -67,14 +67,14 @@ export default {
         // 正在登录
         this.logining = true;
         let loginParams = {
-          username: this.loginForm.username,
+          userName: this.loginForm.username,
           password: this.loginForm.password
         };
         // 调用axios登录接口
         await this.$api
           .Login(loginParams)
           .then(res => {
-            // debugger;
+            console.log(res)
             let { code, msg, user } = res.data;
             if (code === 200) {
               // elementui中提示组件
@@ -100,6 +100,7 @@ export default {
         console.log("error submit!");
         return false;
       }
+
     }
   }
 };

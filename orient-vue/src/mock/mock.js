@@ -1,10 +1,9 @@
-
 // 通过axios-mock-adapter生成代理api地址
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
 
 // import { LoginUsers } from './data/user'
-import {users} from './data/user'
+import { users } from './data/user'
 
 export default {
     init() {
@@ -35,18 +34,18 @@ export default {
                             user = JSON.parse(JSON.stringify(person));
                             user.password = undefined;
                             return true;
-                        }else {
+                        } else {
                             //  如果没有这个person
                             return false
                         }
                     });
-                    // 如果有那么一个人
+                    // 如果有该用户
                     if (hasUser) {
                         console.log("有");
-                        resolve([200, {code: 200, msg: '登录成功',user}]);
-                    } else {  // 如果没有这么一个人
+                        resolve([200, { code: 200, msg: '登录成功', user }]);
+                    } else { // 如果没有该用户
                         console.log("无");
-                        resolve([200, {code: 500, msg: '账号错误' }])
+                        resolve([200, { code: 500, msg: '账号错误' }])
                     }
                 }, 500);
             })

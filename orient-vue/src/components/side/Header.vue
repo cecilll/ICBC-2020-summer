@@ -1,5 +1,7 @@
 <template>
-  <div id="headbar">header</div>
+  <div id="headbar">
+    <img id="logo" src="../../assets/images/ICBC_logo.jpg">
+  </div>
 </template>
 <script>
 export default {
@@ -13,6 +15,10 @@ export default {
 #headbar{
     height: 50px;
     background-color: #fff;
-    margin-bottom: 5px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #ccc;
+}
+#logo {
+    height: 50px;
 }
 </style>
