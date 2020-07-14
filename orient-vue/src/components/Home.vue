@@ -6,7 +6,7 @@
       <transition  name="fade" mode="out-in">
         <router-view></router-view>
       </transition>
-        <div id="chart" style="height: 100%"></div>
+        <div id="chart" style="height: 800px"></div>
         <div id="pieChart" style="height: 100%"></div>
     </div>
   </div>
@@ -131,9 +131,10 @@ export default {
         },
         title: {
           text: '近期重仓股展示',
-          top: 'center',
+          right: 'center',
         },
         legend: {
+          bottom: 'left',
           data: ['Forest', 'Steppe', 'Desert', 'Wetland']
         },
         toolbox: {
