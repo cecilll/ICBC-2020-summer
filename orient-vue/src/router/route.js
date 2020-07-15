@@ -17,9 +17,9 @@ const router = new Router({
             path: '/home',
             name: 'home',
             redirect: '/index',
-            // meta: {
-            //     needLogin: true,
-            // },
+            meta: {
+                needLogin: true,
+            },
             component: Home,
             children: [
                 {
@@ -37,11 +37,11 @@ const router = new Router({
 //         next()
 //     } else {
 //         if (token === '' || token == null) {
-//             next('/login');
+//             next('/');
 //         } else {
 //             next()
 //         }
 //     }
-//
+
 // });
 export default router

@@ -2,7 +2,7 @@ import $axios from "./server.util";
 
 const Login = data => {
     return $axios({
-        url: '/Login',
+        url: '/login',
         methods: 'post',
         params: data
     })
