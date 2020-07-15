@@ -6,7 +6,7 @@ const $axios = (options) => {
         // 默认配置 axios 实例
         const instance = axios.create({
             // 默认请求 ip
-            baseURL: 'http://localhost:8000/api',
+            baseURL: 'http://47.103.137.116:8000/api',
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8'
             },
