@@ -74,16 +74,23 @@ export default {
         await this.$api
           .Login(loginParams)
           .then(res => {
-            console.log(res)
-            let { code, msg, user } = res.data;
-            if (code === 200) {
+            // debugger;
+            console.log(res);
+            console.log(res.data);
+            console.log(JSON.parse(res.data));
+            let { code, msg, user } = JSON.parse(res.data);
+            console.log(res);
+            if (code === '200') {
+              console.log("lll");
               // elementui中提示组件
               this.$message({
                 type: "success",
                 message: msg
               });
               // 登陆成功，用户信息就保存在sessionStorage中
+              console.log("success");
               sessionStorage.setItem("user", JSON.stringify(user));
+              console.log("letsgo");
               // 跳转到后台主页面
               this.$router.push({ path: "/home" });
             } else {
@@ -100,7 +107,6 @@ export default {
         console.log("error submit!");
         return false;
       }
-
     }
   }
 };
