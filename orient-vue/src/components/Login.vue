@@ -67,7 +67,7 @@ export default {
         // 正在登录
         this.logining = true;
         let loginParams = {
-          userName: this.loginForm.username,
+          username: this.loginForm.username,
           password: this.loginForm.password
         };
         // 调用axios登录接口
@@ -76,9 +76,7 @@ export default {
           .then(res => {
             // debugger;
             console.log(res);
-            console.log(res.data);
-            console.log(JSON.parse(res.data));
-            let { code, msg, user } = JSON.parse(res.data);
+            let { code, msg, user } = res.data;
             console.log(res);
             if (code === '200') {
               console.log("lll");

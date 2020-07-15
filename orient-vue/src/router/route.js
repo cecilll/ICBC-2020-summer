@@ -22,7 +22,6 @@ const router = new Router({
             },
             component: Home,
             children: [
-                //首页
                 {
                     path: '/index',
                     name: 'index',
@@ -32,17 +31,17 @@ const router = new Router({
         }
     ]
 });
-router.beforeEach((to, from, next) => {
-    let token = localStorage.getItem('token');
-    if (to.path === '/') {
-        next()
-    } else {
-        if (token === '' || token == null) {
-            next('/');
-        } else {
-            next()
-        }
-    }
+// router.beforeEach((to, from, next) => {
+//     let token = localStorage.getItem('token');
+//     if (to.path === '/') {
+//         next()
+//     } else {
+//         if (token === '' || token == null) {
+//             next('/');
+//         } else {
+//             next()
+//         }
+//     }
 
-});
+// });
 export default router
