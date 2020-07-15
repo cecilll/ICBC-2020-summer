@@ -7,7 +7,7 @@ import index from "@/components/Index"
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
     routes: [{
             path: '/',
             name: 'login',
@@ -31,4 +31,18 @@ export default new Router({
             ]
         }
     ]
-})
+});
+router.beforeEach((to, from, next) => {
+    let token = localStorage.getItem('token');
+    if (to.path === '/') {
+        next()
+    } else {
+        if (token === '' || token == null) {
+            next('/');
+        } else {
+            next()
+        }
+    }
+
+});
+export default router

@@ -10,6 +10,7 @@ import $service from "./requests/index"
 // mock.init();
 import axios from 'axios'
 Vue.prototype.$ajax = axios;
+// axios.defaults.baseURL = '/api'
 Vue.prototype.$echarts = echarts
 
 // import store from './store/store'
@@ -17,14 +18,14 @@ Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
 Vue.use($service)
-Vue.prototype.$goRoute = function (index) {
-  this.$router.push(index)
+Vue.prototype.$goRoute = function(index) {
+    this.$router.push(index)
 };
 
 
 new Vue({
-  el: '#app',
-  router,
-  // store,
-  render: h => h(App),
+    el: '#app',
+    router,
+    // store,
+    render: h => h(App),
 }).$mount('#app');
