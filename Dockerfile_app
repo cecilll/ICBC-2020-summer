@@ -1,0 +1,5 @@
+FROM java:8  
+VOLUME /tmp   
+WORKDIR /orient-app
+ADD orient-app.jar /app.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
