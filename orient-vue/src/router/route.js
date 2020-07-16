@@ -9,19 +9,17 @@ Vue.use(Router);
 
 const router = new Router({
     routes: [{
-            path: '/',
-            name: 'login',
-            component: Login
-        },
+        path: '/login',
+        name: 'login',
+        component: Login
+    },
         {
-            path: '/home',
+            path: '/',
             name: 'home',
             redirect: '/index',
-            meta: {
-                needLogin: true,
-            },
             component: Home,
             children: [
+                //首页
                 {
                     path: '/index',
                     name: 'index',
@@ -29,19 +27,18 @@ const router = new Router({
                 }
             ]
         }
-    ]
-});
-// router.beforeEach((to, from, next) => {
-//     let token = localStorage.getItem('token');
-//     if (to.path === '/') {
-//         next()
-//     } else {
-//         if (token === '' || token == null) {
-//             next('/');
-//         } else {
-//             next()
-//         }
-//     }
+    ]});
+router.beforeEach((to, from, next) => {
+    let token = sessionStorage.getItem('token');
+    if (to.path === '/login') {
+        next()
+    } else {
+        if (token === '' || token == null) {
+            next('/login');
+        } else {
+            next()
+        }
+    }
 
-// });
+});
 export default router

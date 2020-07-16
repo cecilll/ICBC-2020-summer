@@ -76,10 +76,11 @@ export default {
           .then(res => {
             // debugger;
             console.log(res);
-            let { code, msg, user } = res.data;
-            console.log(res);
+            let { code, msg } = res.data;
+            let headers = res.headers
+            let token = headers.token
+            console.log(token)
             if (code === '200') {
-              console.log("lll");
               // elementui中提示组件
               this.$message({
                 type: "success",
@@ -87,10 +88,10 @@ export default {
               });
               // 登陆成功，用户信息就保存在sessionStorage中
               console.log("success");
-              sessionStorage.setItem("user", JSON.stringify(user));
+              sessionStorage.setItem("token", JSON.stringify(token));
               console.log("letsgo");
               // 跳转到后台主页面
-              this.$router.push({ path: "/home" });
+              this.$router.push({ path: "/" });
             } else {
               this.$message({
                 type: "error",
